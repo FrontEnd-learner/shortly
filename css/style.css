@@ -7,6 +7,8 @@
     --accent-color-hover: #9AE3E3;
     --dark-bg: #232127;
     --error-color: #F46363;
+    --text-color-opacity: rgba(52, 49, 61, 0.5);
+
 }
 
 /* FONTS */
@@ -92,6 +94,7 @@ img{
     color: #fff;
     text-align: center;
     cursor: pointer;
+    white-space: nowrap;
 }
 .button:hover{
     background-color: var(--accent-color-hover);
@@ -114,6 +117,16 @@ img{
 .button--restangle-big{
     border-radius: 10px;
 }
+
+/* PLACEHOLDER */
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+    color: rgba(52, 49, 61, 0.5);
+    opacity: 1;
+}
+
 
 /* SITE HEADER */
 .site-header {
@@ -222,6 +235,66 @@ img{
     line-height: 36px;
     letter-spacing: 0.15px;
 }
+
+/* URL-SHORTENER */
+.index-url-shortener-features-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-bg);
+}
+.index-url-shortener-features-wrapper__url-shortener {
+    margin-top: -84px;
+}
+/* .url-shortener {
+} */
+.url-shortener__form {
+    display: flex;
+    padding: 45px 64px;
+    border-radius: 10px;
+    background-color: #4b3f6b;
+    background-image: url(../img/form-bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.url-shortener__input-wrapper {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 24px;
+}
+.url-shortener__input{
+    display: block;
+    flex-grow: 1;
+    width: 100%;
+    padding: 14px 32px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    color: var(--text-color-dark);
+    font-size: 20px;
+    font-weight: 500    ;
+    line-height: 36px;
+    letter-spacing: 0.15px;
+}
+.url-shortener__input:not(:focus):not(:placeholder-shown):invalid{
+    border-color: var(--error-color);
+    color: rgba(244, 99, 99, 0.5);
+}
+.url-shortener__error-msg{
+    display: none;
+}
+.url-shortener__input:not(:focus):not(:placeholder-shown):invalid ~ .url-shortener__error-msg{
+    display: block;
+    margin-top: 8px;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.10px;
+    color: var(--error-color);
+}
+
+
 
 
 @media /* only for retina displays */
